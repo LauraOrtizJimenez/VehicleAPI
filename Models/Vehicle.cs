@@ -1,17 +1,18 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace VehicleAPI.Models;
-
-public class Vehicle
+namespace VehicleAPI.Models
 {
-    public Guid Id { get; init; }=Guid.NewGuid();
-    
-    [Required, StringLength(50)]
-    public string Make { get; init; } = null!;
-    
-    [Required, StringLength(50)]
-    public string Model { get; init; } = null!;
-    
-    [Range(1900, 2100)]
-    public int Year { get; init; }
+    public class Vehicle
+    {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
+        [Required, StringLength(50)]
+        public string Make { get; set; } = null!;   // Marca
+
+        [Required, StringLength(50)]
+        public string Model { get; set; } = null!;  // Modelo
+
+        [Range(1900, 2100)]
+        public int Year { get; set; }               // Año
+    }
 }
